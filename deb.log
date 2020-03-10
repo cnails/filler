@@ -1,2 +1,12 @@
+2
+3
 **.
+vars.x = 0
+vars.y = 0
+vars.x = 0
+vars.y = 1
+vars.x = 0
+vars.y = 2
 .**
+vars.x = 1
+vars.y = 0

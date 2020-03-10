@@ -6,7 +6,7 @@
 /*   By: cnails <cnails@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 17:05:30 by cnails            #+#    #+#             */
-/*   Updated: 2020/03/10 19:11:58 by cnails           ###   ########.fr       */
+/*   Updated: 2020/03/10 20:09:13 by cnails           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,45 @@
 static void	get_tetr(t_map *map)
 {
 	char *line;
+	int		x = 0;
+	int		y = 0;
 
-	// ft_printf("%n%d\n", map->debug_fd, map->size_x);
+	ft_printf("%n%d\n", map->debug_fd, map->size_x);
+	ft_printf("%n%d\n", map->debug_fd, map->size_y);
 	// ft_printf("%n%d\n", map->debug_fd, 1);
-	map->tetr.points = (int **)malloc(sizeof(int *) * (map->size_y));
+	map->tetr.points = (char **)malloc(sizeof(int *) * (map->size_x + 2));
 	// ft_printf("%n%d\n", map->debug_fd, 2);
-	map->vars.y = 0;
-	while (map->vars.y < map->size_y - 1)
+	// map->vars.y = 0;
+	x = 0;
+	while (x < (map->size_x))
 	{
 		// ft_printf("%n%d\n", map->debug_fd, 3);
-		map->tetr.points[map->vars.y] = (int *)malloc(sizeof(int) * (map->size_x));
+		map->tetr.points[y] = (char *)malloc(sizeof(int) * (map->size_y + 1));
 		// ft_printf("%n%d\n", map->debug_fd, 5);
-		map->vars.x = 0;
-		while (map->vars.x < map->size_x - 1)
+		// map->vars.x = 0;
+		y = 0;
+		get_next_line(0, &line);
+		ft_printf("%n%s\n", map->debug_fd, line);
+		while (y < (map->size_y))
 		{
-			if (get_next_line(0, &line) > 0 && line)
-			{
-				// ft_printf("%n%d\n", map->debug_fd, 2);
-				ft_printf("%n%s\n", map->debug_fd, line);
+			/* if (*/// > 0 && line)
+			// {
+				
+				// map->tetr.points[map->vars.y][map->vars.x] = 0;
+				ft_printf("%nvars.x = %d\n", map->debug_fd, x);
+				// ft_printf("%nvars.x = %d\n", map->debug_fd, map->vars.x);
+				ft_printf("%nvars.y = %d\n", map->debug_fd, y);
+				// ft_printf("%n%s\n", map->debug_fd, line);
 				// ft_printf("%n%d\n", map->debug_fd, 1);
-				map->tetr.points[map->vars.y][map->vars.x] = line[map->vars.x] == '*' ? 1 : 0;
-				free(line);
-			}
-			map->vars.x++;
+				// line[y];
+				map->tetr.points[x][y] = line[y] == '*' ? '1' : '0';
+				// ft_printf("%nvars.y = %d\n", map->debug_fd, map->vars.y);
+			// }
+			y++;
 		}
-		map->vars.y++;
+		free(line);
+		// map->vars.y++;
+		x++;
 	}
 }
 

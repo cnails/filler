@@ -6,7 +6,7 @@
 /*   By: cnails <cnails@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 17:16:12 by cnails            #+#    #+#             */
-/*   Updated: 2020/03/10 18:33:40 by cnails           ###   ########.fr       */
+/*   Updated: 2020/03/10 20:08:15 by cnails           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct 	s_vars
 
 typedef struct	s_tetr
 {
-	int			**points;
+	char		**points;
 }				t_tetr;
 
 
