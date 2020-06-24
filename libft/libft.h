@@ -6,13 +6,13 @@
 /*   By: cnails <cnails@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 18:01:53 by cnails            #+#    #+#             */
-/*   Updated: 2020/03/09 17:26:43 by cnails           ###   ########.fr       */
+/*   Updated: 2020/03/17 12:40:11 by cnails           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LIBFT_H
 # define FT_LIBFT_H
-# define BUFF_SIZE 10000
+# define BUFF_SIZE 1
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>

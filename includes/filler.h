@@ -6,15 +6,15 @@
 /*   By: cnails <cnails@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 17:16:12 by cnails            #+#    #+#             */
-/*   Updated: 2020/03/17 17:18:41 by cnails           ###   ########.fr       */
+/*   Updated: 2020/03/17 17:17:38 by cnails           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLER_H
 # define FILLER_H
-# include "libft/libft.h"
+# include "../libft/libft.h"
 
-typedef struct	s_vars
+typedef struct 	s_vars
 {
 	int			x;
 	int			y;
@@ -25,10 +25,12 @@ typedef struct	s_map
 	int			**info;
 }				t_map;
 
+
 typedef struct	s_tetr
 {
 	int			**points;
 }				t_tetr;
+
 
 typedef struct	s_data
 {
