@@ -6,11 +6,11 @@
 #    By: cnails <cnails@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/17 17:12:53 by cnails            #+#    #+#              #
-#    Updated: 2020/06/28 13:02:25 by cnails           ###   ########.fr        #
+#    Updated: 2020/06/28 13:07:09 by cnails           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = players/cnails.filler
+NAME = cnails.filler
 
 SRCS := src/main.c 
 SRCS +=	src/calc_map.c
