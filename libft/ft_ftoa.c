@@ -6,13 +6,13 @@
 /*   By: cnails <cnails@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 13:40:25 by dmetallo          #+#    #+#             */
-/*   Updated: 2020/01/30 12:21:06 by cnails           ###   ########.fr       */
+/*   Updated: 2020/06/28 10:01:05 by cnails           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		len(intmax_t n)
+static int		len(size_t n)
 {
 	int i;
 
@@ -22,7 +22,7 @@ static int		len(intmax_t n)
 	return (i);
 }
 
-static char		*ft_qitoa(intmax_t n, int l)
+static char		*ft_qitoa(size_t n, int l)
 {
 	char	*str;
 	int		flag;
@@ -68,8 +68,8 @@ char			*ft_ftoa(double f, int n)
 
 	l = n;
 	n = (n < 0) ? 0 : n;
-	str = ft_qitoa((intmax_t)f, 1);
-	f -= (intmax_t)f;
+	str = ft_qitoa((size_t)f, 1);
+	f -= (size_t)f;
 	while (n-- > 0)
 		f *= 10;
 	if (n)

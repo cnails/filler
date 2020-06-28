@@ -6,7 +6,7 @@
 /*   By: cnails <cnails@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/16 15:40:10 by cnails            #+#    #+#             */
-/*   Updated: 2020/03/17 17:17:12 by cnails           ###   ########.fr       */
+/*   Updated: 2020/06/28 10:51:03 by cnails           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,21 +67,30 @@ static int		calc_sum(t_data *data, int x, int y)
 	return (sum);
 }
 
-void			print_res(int a, int b)
+static int		print_res(int a, int b)
 {
+	if (a == -1 && b == -1)
+	{
+		ft_putnbr(0);
+		ft_putchar(' ');
+		ft_putnbr(0);
+		ft_putchar('\n');
+		return (0);
+	}
 	ft_putnbr(a);
 	ft_putchar(' ');
 	ft_putnbr(b);
 	ft_putchar('\n');
+	return (1);
 }
 
 static int		calc_step_after_init(t_data *data, t_vars map,
 											t_vars var, t_vars sum)
 {
-	while (map.x < (data->map_size_x))
+	while (map.x < data->map_size_x)
 	{
 		map.y = 0;
-		while (map.y < (data->map_size_y))
+		while (map.y < data->map_size_y)
 		{
 			if (check_pos(data, map.x, map.y))
 				sum.x = calc_sum(data, map.x, map.y);
@@ -95,10 +104,7 @@ static int		calc_step_after_init(t_data *data, t_vars map,
 		}
 		map.x++;
 	}
-	if (var.x == -1 && var.y == -1)
-		return (0);
-	print_res(var.x, var.y);
-	return (1);
+	return (print_res(var.x, var.y));
 }
 
 int				calc_step(t_data *data)

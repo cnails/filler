@@ -6,7 +6,7 @@
 #    By: cnails <cnails@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/04 15:40:03 by cnails            #+#    #+#              #
-#    Updated: 2019/11/28 17:54:10 by cnails           ###   ########.fr        #
+#    Updated: 2020/06/28 10:49:58 by cnails           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,10 +42,12 @@ OBJS = $(FILES:.c=.o)
 all: $(NAME)
 
 %.o: %.c $(INC)
-	@gcc -c  $< -I $(INC)
+	@gcc -c  $< -I .
+	@echo -n "."
 
 $(NAME): $(OBJS)
 	@ar rc $@ $^
+	@echo ""
 
 clean:
 	@rm -f $(OBJS)

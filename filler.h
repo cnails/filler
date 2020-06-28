@@ -6,7 +6,7 @@
 /*   By: cnails <cnails@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 17:16:12 by cnails            #+#    #+#             */
-/*   Updated: 2020/03/17 17:18:41 by cnails           ###   ########.fr       */
+/*   Updated: 2020/06/28 10:47:55 by cnails           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ typedef struct	s_data
 	t_map		*map;
 	int			fd;
 	int			enemy;
-	int			debug_fd;
 	int			n_player;
 	int			map_size_x;
 	int			map_size_y;
