@@ -6,7 +6,7 @@
 /*   By: cnails <cnails@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/17 12:37:20 by cnails            #+#    #+#             */
-/*   Updated: 2020/06/28 11:45:15 by cnails           ###   ########.fr       */
+/*   Updated: 2020/06/28 11:59:43 by cnails           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int			get_info(t_data *data)
 				return (0);
 			}
 			free(line);
-			break;
+			break ;
 		}
 		free(line);
 	}
