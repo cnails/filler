@@ -6,7 +6,7 @@
 /*   By: cnails <cnails@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/17 12:37:20 by cnails            #+#    #+#             */
-/*   Updated: 2020/06/28 10:47:32 by cnails           ###   ########.fr       */
+/*   Updated: 2020/06/28 11:42:59 by cnails           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,15 @@ void		get_size_map(t_data *data, char *line)
 	data->map_size_y = ft_atoi(line + i);
 }
 
+static void	dop_func(t_data *data, char **line)
+{
+	get_size_map(data, *line);
+	free(*line);
+	get_next_line(data->fd, line);
+	ft_strdel(line);
+	get_map(data);
+}
+
 int			get_info(t_data *data)
 {
 	char *line;
@@ -41,10 +50,12 @@ int			get_info(t_data *data)
 	{
 		if (line && !ft_strncmp(line, "Plateau", 6))
 		{
-			get_size_map(data, line);
-			get_next_line(data->fd, &line);
-			ft_strdel(&line);
-			get_map(data);
+			dop_func(data, &line);
+			// get_size_map(data, line);
+			// free(line);
+			// get_next_line(data->fd, &line);
+			// ft_strdel(&line);
+			// get_map(data);
 		}
 		if (line && !ft_strncmp(line, "Piece", 5))
 		{
@@ -52,9 +63,12 @@ int			get_info(t_data *data)
 			get_tetr(data);
 			calc_map(data);
 			if (!calc_step(data))
+			{
+				free(line);
 				return (0);
+			}
 			free(line);
-			break ;
+			break;
 		}
 		free(line);
 	}
