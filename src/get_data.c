@@ -6,7 +6,7 @@
 /*   By: cnails <cnails@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/17 12:37:20 by cnails            #+#    #+#             */
-/*   Updated: 2020/06/28 11:42:59 by cnails           ###   ########.fr       */
+/*   Updated: 2020/06/28 11:45:15 by cnails           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,6 @@ int			get_info(t_data *data)
 		if (line && !ft_strncmp(line, "Plateau", 6))
 		{
 			dop_func(data, &line);
-			// get_size_map(data, line);
-			// free(line);
-			// get_next_line(data->fd, &line);
-			// ft_strdel(&line);
-			// get_map(data);
 		}
 		if (line && !ft_strncmp(line, "Piece", 5))
 		{
