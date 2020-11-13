@@ -19,13 +19,15 @@ static int		check_pos(t_data *data, int x, int y)
 
 	coord.x = 0;
 	i = 0;
-	if ((x + data->size_x) >= data->map_size_x || (y + data->size_y)
-												>= data->map_size_y)
-		return (0);
-	while (coord.x < data->size_x)
+	// if ((x + data->size_x) > data->map_size_x || (y + data->size_y)
+	// 											> data->map_size_y)
+	// 	return (0);
+	while ((coord.x < data->size_x) &&
+		((x + data->size_x) <= data->map_size_x) && data->tetr.points[coord.x][coord.y]))
 	{
 		coord.y = 0;
-		while (coord.y < data->size_y)
+		while ((coord.y < data->size_y) && 
+			((x + data->size_x) <= data->map_size_x) && data->tetr.points[coord.x][coord.y])))
 		{
 			if (data->map->info[x + coord.x][y + coord.y] == -1
 							&& data->tetr.points[coord.x][coord.y] == 1)
